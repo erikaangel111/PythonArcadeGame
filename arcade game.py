@@ -1,7 +1,6 @@
-#arcade game 
 from random import randint
 import pygame 
-from pygame import sprite, transform  
+from pygame import sprite, transform 
 pygame.init()
 font = pygame.font.Font(None, 72)
 
@@ -16,7 +15,7 @@ shift += speed
 
 x_start, y_start = 20, 10
 
-pygame.display.set_caption("Arcade")  
+pygame.display.set_caption("Spacedullvaders")  
 window = pygame.display.set_mode((win_width, win_height))
 clock = pygame.time.Clock()
 
@@ -25,15 +24,15 @@ img_file_back = pygame.transform.scale(pygame.image.load(r"C:\Users\Herberth\One
 img_file_hero = pygame.transform.scale(pygame.image.load(r"C:\Users\Herberth\OneDrive\Escritorio\Arcade\a_simple_guy_caminando.png"), (50, 50)) 
 img_file_bomb = pygame.transform.scale(pygame.image.load(r"C:\Users\Herberth\OneDrive\Escritorio\Arcade\bomb.png"), (30, 30)) 
 img_file_enemy = pygame.transform.scale(pygame.image.load(r"C:\Users\Herberth\OneDrive\Escritorio\Arcade\dude2.png"), (50, 50)) 
-img_file_princess = pygame.transform.scale(pygame.image.load(r"C:\Users\Herberth\OneDrive\Escritorio\Arcade\a_simple_guy_caminando.png"), (50, 50)) 
+img_file_princess = pygame.transform.scale(pygame.image.load(r"C:\Users\Herberth\OneDrive\Escritorio\Arcade\pancho.png"), (50, 50)) 
 
-
+# Define el color verde
 C_GREEN = (0, 255, 0)
 
 class GameSprite(sprite.Sprite):
     def __init__(self, image, x, y):
         sprite.Sprite.__init__(self)
-        self.image = transform.scale(pygame.image.load(image), (80, 80))
+        self.image = transform.scale(pygame.image.load("a_simple_guy_caminando.png"), (80, 80))
         self.rect = self.image.get_rect() 
         self.rect.x = x
         self.rect.y = y
@@ -66,7 +65,7 @@ class Enemy(pygame.sprite.Sprite):
        pygame.sprite.Sprite.__init__(self)
 
 
-       self.image = pygame.transform.scale(pygame.image.load(filename), (width, height)).convert_alpha()
+       self.image = pygame.transform.scale(pygame.image.load("dude2.png"), (width, height)).convert_alpha()
        self.rect = self.image.get_rect()
        self.rect.x = x
        self.rect.y = y
@@ -115,7 +114,7 @@ bomb = Enemy(520, 500, img_file_bomb, 60, 60)
 bombs.add(bomb)
 
 # Crea la princesa
-pr = FinalSprite(img_file_princess, win_width + 500, win_height - 150, 0)
+pr = FinalSprite(img_file_princess, win_width + 500, win_height - 150)
 all_sprites.add(pr)
 
 run = True
@@ -172,5 +171,3 @@ while run:
                 text = font.render("JUEGO TERMINADO", 1, C_RED)
                 window.blit(text, (250, 250))
 pygame.display.update()
-
- 
