@@ -16,7 +16,7 @@ shift += speed
 
 x_start, y_start = 20, 10
 
-pygame.display.set_caption("Spacedullvaders")  
+pygame.display.set_caption("Arcade")  
 window = pygame.display.set_mode((win_width, win_height))
 clock = pygame.time.Clock()
 
