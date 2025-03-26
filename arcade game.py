@@ -173,9 +173,4 @@ while run:
                 window.blit(text, (250, 250))
 pygame.display.update()
 
- File "C:\Users\Herberth\OneDrive\Escritorio\Arcade\arcade.py", line 35, in __init__
-    self.image = transform.scale(pygame.image.load(image), (80, 80))
-  File "C:\Users\Herberth\OneDrive\Escritorio\Arcade\arcade.py", line 90, in <module>
-    hero = GameSprite(img_file_hero, x_start, y_start)
-
-
+ 
